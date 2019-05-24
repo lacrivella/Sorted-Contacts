@@ -1,6 +1,19 @@
 import Component from './Component.js';
+import ContactRow from './ContactRow.js';
 
 class ContactTable extends Component {
+    render() {
+        const list = this.renderDOM();
+
+        const contacts = this.props.contacts;
+
+        contacts.forEach(contact => {
+            const contactRow = new ContactRow({ contact });
+            const contactRowDOM = contactRow.render();
+            list.appendChild(contactRowDOM);
+        });
+        return list;
+    }
     renderTemplate() {
         return /*html*/ `
             <table>
