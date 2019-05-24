@@ -1,0 +1,10 @@
+.sort {
+    background-color: gainsboro;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.sort label {
+    margin-right: 20px;
+}
