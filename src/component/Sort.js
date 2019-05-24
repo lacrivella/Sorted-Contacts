@@ -7,6 +7,12 @@ class Sort extends Component {
         form.addEventListener('submit', event => event.preventDefault());
 
         form.addEventListener('input', () => {
+            const formData = new FormData(form);
+            const sortOptions = {
+                property: formData.get('property'),
+                direction: parseInt(formData.get('direction'))
+            };
+            this.props.onSort(sortOptions);
         });
 
         return form;
@@ -17,7 +23,7 @@ class Sort extends Component {
             <form class="sort">
                 <label>
                     Sort By:
-                    <select>
+                    <select name="property">
                         <option value="first-name">First Name</option>
                         <option value="last-name">Last Name</option>
                         <option value="company">Company</option>
@@ -26,7 +32,7 @@ class Sort extends Component {
                 </label>
                 <label>
                     Direction:
-                    <select>
+                    <select name="direction">
                         <option value="1">Ascending</option>
                         <option value="-1">Descending</option>
                     </select>

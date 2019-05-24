@@ -14,7 +14,9 @@ class App extends Component {
         const main = dom.querySelector('main');
 
         const sort = new Sort({
-
+            onSort: sortOptions => {
+                console.log(sortOptions);
+            }
         });
         main.appendChild(sort.render());
 
