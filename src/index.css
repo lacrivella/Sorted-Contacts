@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Imprima|Shrikhand&display=swap');
+* {
+    font-family: 'Imprima', sans-serif;
+}
+
+h1 {
+    font-family: 'Shrikhand', cursive;
+}
