@@ -24,16 +24,19 @@ const pruitt = {
 const contacts = [cantu, george, pruitt];
 
 function sortContacts(contacts, sortOptions) {
+    const property = sortOptions.property;
+
     return contacts.slice().sort((a, b) => {
-        if(a.firstName > b.firstName) {
+        if(a[property] > b[property]) {
             return 1;
         }
-        else if(b.firstName > a.firstName) {
+        else if(b[property] > a[property]) {
             return -1;
         }
         return 0;
     });
 }
+
 
 test('sorts by first name', assert => {
     const sortOptions = {
@@ -44,3 +47,24 @@ test('sorts by first name', assert => {
 
     assert.deepEqual(sorted, [cantu, george, pruitt]);
 });
+
+test('sorts by last name', assert => {
+    const sortOptions = {
+        property: 'lastName'
+    };
+
+    const sorted = sortContacts(contacts, sortOptions);
+
+    assert.deepEqual(sorted, [pruitt, george, cantu]);
+});
+
+// test('sorts by first name descending', assert => {
+//     const sortOptions = {
+//         property: 'firstName',
+//         direction: -1
+//     };
+
+//     const sorted = sortContacts(contacts, sortOptions);
+
+//     assert.deepEqual(sorted, [cantu, george, pruitt]);
+// });
