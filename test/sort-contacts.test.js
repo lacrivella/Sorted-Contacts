@@ -1,3 +1,5 @@
+import sortContacts from '../src/sort-contacts.js';
+
 const test = QUnit.test;
 
 QUnit.module('Sort Contatcs');
@@ -23,24 +25,10 @@ const pruitt = {
 };
 const contacts = [cantu, george, pruitt];
 
-function sortContacts(contacts, sortOptions) {
-    const property = sortOptions.property;
-
-    return contacts.slice().sort((a, b) => {
-        if(a[property] > b[property]) {
-            return 1;
-        }
-        else if(b[property] > a[property]) {
-            return -1;
-        }
-        return 0;
-    });
-}
-
-
 test('sorts by first name', assert => {
     const sortOptions = {
-        property: 'firstName'
+        property: 'firstName',
+        direction: 1
     };
 
     const sorted = sortContacts(contacts, sortOptions);
@@ -50,7 +38,8 @@ test('sorts by first name', assert => {
 
 test('sorts by last name', assert => {
     const sortOptions = {
-        property: 'lastName'
+        property: 'lastName',
+        direction: 1
     };
 
     const sorted = sortContacts(contacts, sortOptions);
@@ -58,13 +47,13 @@ test('sorts by last name', assert => {
     assert.deepEqual(sorted, [pruitt, george, cantu]);
 });
 
-// test('sorts by first name descending', assert => {
-//     const sortOptions = {
-//         property: 'firstName',
-//         direction: -1
-//     };
+test('sorts by first name descending', assert => {
+    const sortOptions = {
+        property: 'firstName',
+        direction: -1
+    };
 
-//     const sorted = sortContacts(contacts, sortOptions);
+    const sorted = sortContacts(contacts, sortOptions);
 
-//     assert.deepEqual(sorted, [cantu, george, pruitt]);
-// });
+    assert.deepEqual(sorted, [pruitt, george, cantu]);
+});
