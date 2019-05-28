@@ -5,4 +5,17 @@
 
 h1 {
     font-family: 'Shrikhand', cursive;
+    display: flex;
+    justify-content: center;
+}
+
+th {
+    font-family: 'Shrikhand', cursive;
+}
+
+table {
+    border: 1px solid black;
+    text-align: center;
+    padding: 15px;
+    background-color: azure;
 }

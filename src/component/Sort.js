@@ -24,10 +24,10 @@ class Sort extends Component {
                 <label>
                     Sort By:
                     <select name="property">
-                        <option value="first-name">First Name</option>
-                        <option value="last-name">Last Name</option>
+                        <option value="firstName">First Name</option>
+                        <option value="lastName">Last Name</option>
                         <option value="company">Company</option>
-                        <option value="fruit">Favorite Fruit</option>
+                        <option value="favoriteFruit">Favorite Fruit</option>
                     </select>
                 </label>
                 <label>

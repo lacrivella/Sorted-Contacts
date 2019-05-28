@@ -3,6 +3,7 @@ import Header from './Header.js';
 import Sort from './Sort.js';
 import ContactTable from './ContactTable.js';
 import contacts from '../../data/contacts.js';
+import sortContacts from '../sort-contacts.js';
 
 class App extends Component {
     render() {
@@ -12,10 +13,11 @@ class App extends Component {
         const headerDOM = header.render();
         
         const main = dom.querySelector('main');
-
+   
         const sort = new Sort({
             onSort: sortOptions => {
-                console.log(sortOptions);
+                const sorted = sortContacts(contacts, sortOptions);
+                contactTable.update({ contacts: sorted }); 
             }
         });
         main.appendChild(sort.render());
