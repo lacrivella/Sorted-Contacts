@@ -1,0 +1,10 @@
+.sort {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.sort label {
+    margin-right: 20px;
+    font-family: 'Shrikhand', cursive;
+}

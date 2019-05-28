@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Imprima|Shrikhand&display=swap');
+* {
+    font-family: 'Imprima', sans-serif;
+    color: #555768;
+}
+
+h1 {
+    font-family: 'Shrikhand', cursive;
+    display: flex;
+    justify-content: center;
+}
+
+th {
+    font-family: 'Shrikhand', cursive;
+}
+
+table {
+    border: 1px solid #242238;
+    text-align: center;
+    padding: 15px;
+    background-color: #FAF9F4;
+}
+
+th{
+    background-color: #FAF9F4;
+}
+
+td {
+    background-color: #FAF9F4;
+}
